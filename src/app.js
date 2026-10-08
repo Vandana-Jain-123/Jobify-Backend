@@ -3,6 +3,7 @@ import cors from "cors";
 import conncetionDB from "./conncetionDB.js";
 import signupRoutes from "./routes/signupRoutes.js";
 import loginRoutes from "./routes/loginRoutes.js";
+import userProfileRoutes from "./routes/UserRoutes/userProfileRoutes.js"
 
 const app = express();
 app.use(express.json());
@@ -20,6 +21,7 @@ app.use(
 
 app.use("/", signupRoutes);
 app.use("/checkLogin", loginRoutes);
+app.use("/",userProfileRoutes)
 console.log("hello backend");
 
 app.listen(port, () => {
